@@ -1,0 +1,211 @@
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `compuplanet`
+--
+CREATE DATABASE IF NOT EXISTS `compuplanet` DEFAULT CHARACTER SET utf32 COLLATE utf32_spanish_ci;
+USE `compuplanet`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compra`
+--
+-- Creación: 07-12-2023 a las 18:12:41
+-- Última actualización: 06-12-2023 a las 23:04:02
+--
+
+CREATE TABLE `compra` (
+  `id` int NOT NULL,
+  `id_transaccion` varchar(20) COLLATE utf32_spanish_ci NOT NULL,
+  `fecha` datetime NOT NULL,
+  `status` varchar(20) COLLATE utf32_spanish_ci NOT NULL,
+  `email` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
+  `id_cliente` varchar(20) COLLATE utf32_spanish_ci NOT NULL,
+  `total` decimal(10,2) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `compra`
+--
+
+INSERT INTO `compra` (`id`, `id_transaccion`, `fecha`, `status`, `email`, `id_cliente`, `total`) VALUES
+(6, '36F11628PL578683D', '2023-12-07 00:21:18', 'COMPLETED', 'sb-tpfcq28600489@personal.example.com', 'EAGKDLJMAZPQS', 10000.00),
+(5, '3G766228SE7014516', '2023-12-07 00:19:19', 'COMPLETED', 'sb-tpfcq28600489@personal.example.com', 'EAGKDLJMAZPQS', 10000.00),
+(4, '5HM11048CU246552X', '2023-12-07 00:00:55', 'COMPLETED', 'sb-tpfcq28600489@personal.example.com', 'EAGKDLJMAZPQS', 100.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_compra`
+--
+-- Creación: 07-12-2023 a las 18:12:41
+-- Última actualización: 06-12-2023 a las 20:58:55
+--
+
+CREATE TABLE `detalle_compra` (
+  `id` int NOT NULL,
+  `id_compra` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `nombre` varchar(200) COLLATE utf32_spanish_ci NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `cantidad` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_compra`
+--
+
+INSERT INTO `detalle_compra` (`id`, `id_compra`, `id_producto`, `nombre`, `precio`, `cantidad`) VALUES
+(1, 4, 28, 'Intel Core i7-10700K', 399.99, 2),
+(2, 4, 21, 'NVIDIA Quadro P5000', 679.99, 1),
+(3, 5, 21, 'NVIDIA Quadro P5000', 679.99, 3),
+(4, 5, 22, 'MSI GeForce RTX 3080 Gaming X Trio', 49.99, 1),
+(5, 6, 21, 'NVIDIA Quadro P5000', 679.99, 3),
+(6, 6, 22, 'MSI GeForce RTX 3080 Gaming X Trio', 49.99, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+-- Creación: 06-12-2023 a las 01:42:47
+-- Última actualización: 06-12-2023 a las 03:21:21
+--
+
+CREATE TABLE `productos` (
+  `id` int NOT NULL,
+  `nombre` varchar(100) COLLATE utf32_spanish_ci NOT NULL,
+  `descripcion` text COLLATE utf32_spanish_ci NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `descuento` tinyint NOT NULL DEFAULT '0',
+  `activo` int NOT NULL,
+  `ruta_imagen` varchar(255) COLLATE utf32_spanish_ci NOT NULL,
+  `categoria` varchar(200) COLLATE utf32_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `descuento`, `activo`, `ruta_imagen`, `categoria`) VALUES
+(12, 'Refrigeracion Liquida ANTRY X TRITON EVO 240 GB BLACK ARGB   ', 'Refrigeracion Liquida ANTRY X TRITON EVO 240 GB BLACK ARGB   ', 287.00, 0, 1, 'R1.jpg', 'Refrigeracion'),
+(13, 'Refrigeracion liquida ANTRY X TRITON EVO 240 WHITE ARGB ', 'Refrigeracion liquida ANTRY X TRITON EVO 240 WHITE ARGB ', 302.40, 0, 1, 'R2.jpg', 'Refrigeracion'),
+(14, 'Refrigeracion Liquida ASUS ROG RYUJIN 240 GB', 'Refrigeracion Liquida ASUS ROG RYUJIN 240 GB', 748.44, 0, 1, 'R3.jpg', 'Refrigeracion'),
+(15, ' Refrigeracion liquida CM, MASTERLIQUID ML240L V2 ARGB', ' Refrigeracion liquida CM, MASTERLIQUID ML240L V2 ARGB', 313.36, 0, 1, 'R4.jpg', 'Refrigeracion'),
+(16, 'RREFRIGERACION LIQUIDA ANTRY TRITON INFINITY 240 ', 'RREFRIGERACION LIQUIDA ANTRY TRITON INFINITY 240', 336.42, 0, 1, 'R5.JPG', 'Refrigeracion'),
+(18, 'Radeon Fury X', '<p>Excelente tarjeta de video para gaming de gama media.</p>', 279.99, 5, 1, 'T1.jpg', 'Tarjetas'),
+(17, 'REFRIGERACION LIQUIDA CORSAIR HYDRO SERIES H115 ', 'REFRIGERACION LIQUIDA CORSAIR HYDRO SERIES H115 ', 359.10, 0, 1, 'R6.JPG', 'Refrigeracion'),
+(19, 'GeForce GTX 1660 Ti', '<p>Rendimiento gráfico de última generación para jugadores exigentes.</p>', 499.99, 10, 1, 'T2.jpg', 'Tarjetas'),
+(20, 'AMD Radeon RX 5700 XT', '<p>Increíble rendimiento gráfico para usuarios avanzados.</p>', 399.99, 8, 1, 'T3.jpg', 'Tarjetas'),
+(21, 'NVIDIA Quadro P5000', '<p>La elección perfecta para jugadores entusiastas y creadores de contenido.</p>', 799.99, 15, 1, 'T4.jpg', 'Tarjetas'),
+(22, 'MSI GeForce RTX 3080 Gaming X Trio', '<p>Una opción económica para mejorar gráficos en sistemas básicos.</p>', 49.99, 0, 1, 'T5.jpg', 'Tarjetas'),
+(23, 'ASUS ROG Strix RX 6800 XT', '<p>El rendimiento gráfico más potente disponible en el mercado.</p>', 1499.99, 20, 1, 'T6.jpg', 'Tarjetas'),
+(24, 'Intel Core i5-9600K', 'Procesador Intel Core i5-9600K', 229.99, 0, 1, 'P1.jpg', 'Procesadores'),
+(25, 'AMD Ryzen 7 3700X', 'Procesador AMD Ryzen 7 3700X', 329.99, 0, 1, 'P2.jpg', 'Procesadores'),
+(26, 'Intel Core i9-9900K', 'Procesador Intel Core i9-9900K', 499.99, 0, 1, 'P3.jpg', 'Procesadores'),
+(27, 'AMD Ryzen 5 5600X', 'Procesador AMD Ryzen 5 5600X', 279.99, 0, 1, 'P4.jpg', 'Procesadores'),
+(28, 'Intel Core i7-10700K', 'Procesador Intel Core i7-10700K', 399.99, 0, 1, 'P5.jpg', 'Procesadores'),
+(29, 'AMD Ryzen 9 5950X', 'Procesador AMD Ryzen 9 5950X', 799.99, 0, 1, 'P6.jpg', 'Procesadores'),
+(30, 'Refigeracion Liquida Antry X Trtion Infinity White', 'Refigeracion Liquida Antry X Trtion Infinity White', 335.66, 0, 1, 'R7.jpg', 'Refrigeracion'),
+(31, 'Refigeracion Liquida Lian Li GALAHAD 240 ARGB', 'Refigeracion Liquida Lian Li GALAHAD 240 ARGB', 485.73, 0, 1, 'R8.jpg', 'Refrigeracion'),
+(32, 'Tarjeta gráfica ASUS TUF Gaming GeForce RTX 4070', '<p>Excelente equilibrio entre rendimiento y precio para juegos casuales.</p>', 169.99, 5, 1, 'T7.jpg', 'Tarjetas'),
+(33, 'Intel Core i7-9700K', 'Procesador Intel Core i7 de novena generación', 399.99, 0, 1, 'P7.jpg', 'Procesadores'),
+(34, 'Corsair Hydro Series H100i RGB Platinum SE', 'Sistema de Refrigeración Líquida para CPU con iluminación RGB', 159.99, 5, 1, 'R9.jpg', 'refrigeracion');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+-- Creación: 07-12-2023 a las 01:23:30
+-- Última actualización: 07-12-2023 a las 01:23:30
+--
+
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL,
+  `nombre` varchar(20) COLLATE utf32_spanish_ci NOT NULL,
+  `email` text CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
+  `contrasenia` varchar(20) COLLATE utf32_spanish_ci NOT NULL,
+  `confirmar_contrasenia` varchar(20) COLLATE utf32_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contrasenia`, `confirmar_contrasenia`) VALUES
+(24, 'Jose', 'sixto_12_2003@hotmail.com', 'cubas', ''),
+(25, 'Fatima', 'fatima@gmail.com', 'fatima', ''),
+(23, 'Sixto', 'sixtojose2003@gmail.com', 'cubas', '');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cliente` (`id_cliente`);
+
+--
+-- Indices de la tabla `detalle_compra`
+--
+ALTER TABLE `detalle_compra`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_compra` (`id_compra`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_compra`
+--
+ALTER TABLE `detalle_compra`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+COMMIT;
+

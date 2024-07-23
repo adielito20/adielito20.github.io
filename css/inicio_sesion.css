@@ -1,0 +1,212 @@
+:root {
+    --azul: #334470;
+    --azuloscuro: #0B2545;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699228800&semt=ais); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-position: center center; /* Centra la imagen en la ventana */
+  }
+  
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: -250px auto 30px; /* Ajusta el valor negativo en el margen superior (-20px) */
+}
+
+
+
+/* Iniciar Sesion */
+
+
+
+.caja-formulario{
+    border: 2px solid black;
+    border-radius: 50px;
+    padding-top: 300px; 
+    padding-bottom: 260px;
+    padding-right: 140px;
+    padding-left: 120px;
+    margin: 20px; 
+    height: 50px;
+
+    position: absolute;
+    background: #ffffff;
+    left: 35%;
+    top: 5%;
+    transform: translate(-10%, 10%); /* Centra vertical y horizontalmente */
+
+}
+
+
+.btn-ingresar{
+    color: white;
+    text-decoration: none;
+}
+
+.logo-inicio-sesion{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    border-radius: 50%;
+    
+}
+
+
+.titulo-i-sesion{
+    font-size: 2em;
+    text-align: center;
+}
+
+.ingresar-datos{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.ingresar-datos label{
+    position: absolute;
+    top: 60%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+.ingresar-datos input:focus~label,
+.ingresar-datos input:valid~label{
+    top: -5px;
+}
+
+.logo-inicio-sesion{
+    position: absolute;
+}
+
+.ingresar-datos input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.2em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.ingresar-datos .icono{
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: #162938;
+    line-height: 57px;
+}
+
+
+.olvide-password{
+    margin: -10px 0 10px;
+    font-weight: 600;    
+ 
+    color: #162938;
+    text-align: right;
+}
+
+.olvide-password a{
+    color: #162938;
+    text-decoration: none;
+}
+
+.olvide-password a:hover{
+    text-decoration: underline;
+}
+
+
+.btn-ingresar{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    color: #f3f3f3;
+    font-size: 1.2em;
+    top: 20%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.btn-ingresar:hover{
+    background: var(--azul);
+}
+.no-registrado{
+    color: #162938;
+    text-align: center;
+}
+
+.no-registrado a{
+    color: #162938;
+    font-weight: 1.3em;
+    text-decoration: none;
+}
+
+.no-registrado a:hover{
+    text-decoration: underline;
+}
+#btn-registro:hover{
+    background: var(--azul);
+}
+#signup:hover{
+    color: blue;
+}
+
+
+
+
+/* RESPONSIVE */
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        background-image: none;
+    }
+
+    .caja-formulario {
+        border: none;
+        width: 400px; /* Establece el ancho del formulario como en la versión de escritorio */
+        padding: 70px 30px; /* Restaura el relleno */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+        align-items: center;
+        margin: -50px auto 50px; /* Ajusta el valor negativo en el margen superior (-20px) */
+
+    }
+}
+
+
+.ingresar-datos input:required {
+    border-bottom: 2px solid rgb(0, 0, 0); /* Cambia el borde inferior del campo a rojo si es requerido */
+  }
+  
+  /* Estilo para los campos válidos */
+.ingresar-datos input:valid {
+    border-bottom: 2px solid green; /* Cambia el borde inferior del campo a verde si es válido */
+}

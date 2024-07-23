@@ -1,0 +1,361 @@
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --color-naranja: #F74A00;
+    --azul: #334470;
+    --azuloscuro: #0B2545;
+    --azulGris: #8DA9C4;
+    --blanco: #FFFFFF; 
+    
+
+}
+
+
+body {
+    font-family: sans-serif;
+    color: black;
+    background-color: #C7C7C7;
+}
+
+
+/* Header */
+
+
+.logo {
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    height: 130px;
+    border-radius: 100%;
+    margin-left: 30px;
+}
+
+.contenedor_inferior {
+    background-color: rgb(18, 80, 46);
+    height: 90px;
+}
+
+.contenedor_inferior nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.op {
+    text-decoration: none;
+    font-weight: 15px;
+    padding: 10px;
+    font-size: 25px;
+    color: white
+}
+
+.op:hover{
+    color: #F74A00;
+}
+
+.carrito{
+    background-color: #d7eaff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carrito:hover{
+    background-color: #669cda;
+    color: #ffffff;
+    
+}
+
+.carro{
+    text-decoration: none;
+}
+
+.carro:hover{
+    color: #ffffff;
+}
+
+
+
+/* /Header */
+
+
+
+/* DETALLES */
+
+.row{
+    background: rgb(241, 240, 240);
+    border: 5px solid #1a7429;
+}
+
+.imagen {
+    width: 600px; /* Ajusta el ancho máximo según sea necesario */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+
+}
+
+.informacion{
+    margin-top: -10%;
+}
+
+
+.comprar {
+    height: 70px;
+    width: 400px;
+    margin-left: 10px;
+    background: #fab5b5;
+    border-radius: 4px;
+    border: 3px solid #531410;
+    font-size: 18px;
+    margin: 0 auto;
+    text-decoration: #000000;
+
+}
+
+.agregar{
+    height: 70px;
+    width: 400px;
+    margin-left: 10px;
+    background: #d9f8d1;
+    border-radius: 4px;
+    border: 3px solid #1d5310;
+    font-size: 18px;
+    margin: 0 auto;
+    text-decoration: #000000;
+
+}
+
+.comprar:hover{
+    background-color: rgb(112, 31, 31);
+    color: white;
+    border: 8px solid #531410;
+}
+
+.agregar:hover {
+    background-color: rgb(47, 112, 31);
+    color: white;
+    border: 8px solid #1d5310;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+.pie-pagina {
+    background-color: var(--black);
+    color: var(--text-input-field);
+    /*height: 120px;*/
+    margin-top: auto;
+}
+.a-pie{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.boletin {
+    display: flex;
+}
+
+.f-logo {
+    margin-top: 20px;
+}
+
+.f-logo .a-pie{
+    padding-left: 10px;
+}
+
+.f-logo h1 {
+    color: white; /* Cambia el color del texto a blanco */
+    display: inline; /* Para que el texto esté en la misma línea que el logotipo */
+    margin-left: 10px; /* Ajusta el espacio entre el logotipo y el texto si es necesario */
+    font-size: 20px;
+}
+
+
+.f-logo .img-pie{
+    width: 60px;
+    height: 40px;
+    padding-left: -10px;
+}
+
+.parr-suscribete{
+    padding-left: 350px;
+    margin-top: 10px;
+}
+
+.sus-boletin{
+    margin-left: 60px;
+    margin-top: 23px;
+}
+
+.sus-boletin input{
+    font-size: 16px;
+    height: 35px;
+    width: 400px;
+    border-radius: 8px;
+}
+
+.sus-boletin button{
+    height: 35px;
+    width: 75px;
+    border-radius: 8px;
+    background-color: var(--color-naranja);
+    color: var(--text-input-field);
+}
+
+.pie-pagina hr{
+    margin: 20px 60px;
+    height: 5px;
+    background-color: #FFFFFF;
+}
+
+
+.redes-sociales {
+    display: flex;
+    justify-content: center ;
+    margin: 20px 60px;
+    
+}
+
+.redes-sociales a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--text-input-field);
+    margin: 10px;
+    border-radius: 50%;
+    color: #000000;
+}
+
+
+.redes-sociales a ion-icon{
+    font-size: 32px;
+    
+}
+
+.redes-sociales a:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+
+.redes-sociales span:hover {
+    color:white;
+    transition: 0.5s;
+}
+
+.menu-footer{
+    margin: 30px 0;
+    justify-content: center;
+    
+}
+
+.menu-footer ul{
+    display: flex;
+    justify-content: center;
+}
+
+.menu-footer ul li{
+    margin: 10px;
+}
+
+.menu-footer ul li a{
+    color: var(--text-input-field);
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.menu-footer ul li a:hover{
+    color: #531410;
+}
+
+.legal-footer{
+    background-color: var(--black);
+    color: var(--very-light-pink);
+}
+
+.legal-footer p{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+
+.redes-sociales a i.fa {
+    font-size: 32px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contenedor_inferior {
+        height: auto;
+    }
+    .contenedor_inferior nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 858px) {
+
+    
+
+    /* footer */
+    .boletin {
+        display: block;
+    }
+
+    .parr-suscribete{
+        padding-left: 80px;
+        margin-top: 10px;
+    }
+    .f-logo{
+        padding: 20px;
+    }
+
+}

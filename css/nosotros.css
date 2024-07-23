@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@100&family=Poppins:wght@300;500&display=swap');
+
+:root {
+    --white: #DBDADA;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --color-naranja: #F74A00;
+    --color-oscuro: #343132;
+    --degradado: linear-gradient(90deg, var(--color-naranja), var(--color-oscuro));
+
+}
+
+
+body {
+    font-family: sans-serif;
+    color: black;
+}
+
+
+/* Header */
+
+
+.logo {
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    height: 130px;
+    border-radius: 100%;
+    margin-left: 30px;
+}
+
+.contenedor_inferior {
+    background-color: rgb(18, 80, 46);
+    height: 90px;
+}
+
+.contenedor_inferior nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.op {
+    text-decoration: none;
+    font-weight: 15px;
+    padding: 10px;
+    font-size: 25px;
+    color: white
+}
+
+.op:hover{
+    color: #F74A00;
+}
+
+.carrito{
+    background-color: #d7eaff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carrito:hover{
+    background-color: #669cda;
+    color: #ffffff;
+    
+}
+
+.carro{
+    text-decoration: none;
+}
+
+.carro:hover{
+    color: #ffffff;
+}
+
+
+
+/* /Header */
+
+
+
+
+
+/* tabla de productos seleccionados */
+
+.container-cart-products{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+
+    background-color: black;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(96, 92, 92, 0.5);
+    border-radius: 10px;
+    
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    left: 15px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+}
+
+.cantidad-producto-carrito{
+    padding-left: 10px;
+}
+
+.titulo-producto-carrito{
+    font-size: 12px;
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+.cart-total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.cart-empty{
+    text-align: center;
+    font-size: 12px;
+}
+
+.hidden-cart{
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+
+/* input - checkbox */
+.checkbtn {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    line-height: 60px;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+#check {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------*/
+/* SLIDER */
+.publicidad{
+    margin: 0;
+    padding: 5px 7px;
+}
+
+.carrusel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.carruselp-items {
+    display: flex;
+    overflow-x: hidden;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 5em);
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.carruselp-item {
+    width: 100%;
+    height: 300px;
+    outline: 1px solid black;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+
+}
+
+.carruselp-item img {
+    width: 720px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.carruselp-item:hover {
+    transform: scale(1.1);
+
+}
+
+.titulo-imagen{
+    position: relative;
+    color: var(--text-input-field);
+    text-shadow: 1px 1px 10px black;
+    margin-top: -30px;
+    margin-left: 35px;
+    z-index: 1;
+
+}
+
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/* PRODUCTOS DESTACADOS */
+
+.prod-destacados{
+    justify-content: center;
+    text-align: center;
+}
+.prod-destacados h1{
+    font-size: 35px;
+    padding-bottom: 40px;
+}
+
+
+/*-------------------------------------------------*/
+/* RESEÑA */
+.resena{
+    display: flex;
+    justify-content: space-around;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+
+.s-marcas h3{
+    padding-right: 10px;
+    font-size: 30px;
+    
+}
+
+
+.imag-r img{
+    width: 70%;
+    outline: 1px solid black;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    
+}
+
+
+.parrafo-r{
+    width: 50%;
+}
+
+.parrafo-r p{
+    /*text-justify: distribute;*/
+    text-align: justify;
+    font-size: 28px;
+    font-weight: 100;
+
+}
+
+.contenedor-marcas{
+    display: flex;
+    justify-content: space-around;
+}
+.s-marcas{
+    padding: 30px;
+}
+
+
+
+/*-------------------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------*/
+/* ENLACE WHATSAPP */
+.contenedor-wp{
+    background-color: #2e6329;
+    border: 1PX solid #FFF;
+    position: fixed;
+    z-index: 999;  /* sobre todos los elementos */
+    border-radius: 50%;
+    bottom: 20px;
+    right: 25px;
+    padding: 25px;
+    transition: ease 0.3s;
+    animation: efectowp 1.2s infinite;
+}
+
+.contenedor-wp:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.btn-wp{
+    width: 80px;
+    transition: ease 1s;
+}
+
+
+@keyframes efectowp{
+    0%{
+        box-shadow: 0 0 0 0 rgba(42, 244, 62, 0.85);
+    }
+    100%{
+        box-shadow: 0 0 0 25px rgba(201, 13, 13, 0);
+    }
+}
+
+
+
+/*-------------------------------------------------*/
+/* FOOTER */
+.pie-pagina {
+    background-color: var(--black);
+    color: var(--text-input-field);
+    /*height: 120px;*/
+    margin-top: auto;
+}
+.a-pie{
+    color: #FFF;  
+    text-decoration: none;
+}
+.boletin {
+    display: flex;
+}
+
+.f-logo {
+    margin-top: 20px;
+}
+
+.f-logo .a-pie{
+    padding-left: 10px;
+}
+
+.f-logo .img-pie{
+    width: 60px;
+    height: 40px;
+    padding-left: -10px;
+}
+
+.parr-suscribete{
+    padding-left: 350px;
+    margin-top: 10px;
+}
+
+.sus-boletin{
+    margin-left: 60px;
+    margin-top: 23px;
+}
+
+.sus-boletin input{
+    font-size: 16px;
+    height: 35px;
+    width: 400px;
+    border-radius: 8px;
+}
+
+.sus-boletin button{
+    height: 35px;
+    width: 75px;
+    border-radius: 8px;
+    background-color: #F74A00;
+    color: var(--text-input-field);
+}
+
+.pie-pagina hr{
+    margin: 20px 60px;
+    height: 5px;
+    background-color: #FFFFFF;
+}
+
+
+.redes-sociales {
+    display: flex;
+    justify-content: center ;
+    margin: 20px 60px;
+    
+}
+
+.redes-sociales a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--text-input-field);
+    margin: 10px;
+    border-radius: 50%;
+    color: #000000;
+}
+
+
+.redes-sociales a ion-icon{
+    font-size: 32px;
+    
+}
+
+.redes-sociales a:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+
+.redes-sociales span:hover {
+    color:white;
+    transition: 0.5s;
+}
+
+.menu-footer{
+    margin: 30px 0;
+    justify-content: center;
+    
+}
+
+.menu-footer ul{
+    display: flex;
+    justify-content: center;
+}
+
+.menu-footer ul li{
+    margin: 10px;
+}
+
+.menu-footer ul li a{
+    color: var(--text-input-field);
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.menu-footer ul li a:hover{
+    color: #F74A00;
+}
+
+.legal-footer{
+    background-color: var(--black);
+    color: var(--very-light-pink);
+}
+
+.legal-footer p{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+/*-------------------------------------------------*/
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .contenedor_inferior {
+        height: auto;
+    }
+    .contenedor_inferior nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 858px) {
+
+    .resena {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .imag-r {
+        flex: 0 0 30%; /* Ajusta según tus necesidades, esto asigna un 30% del ancho total a la imagen */
+        margin-right: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .parrafo-r {
+        flex: 1;
+    }
+
+
+    /* footer */
+    .boletin {
+        display: block;
+    }
+
+    .parr-suscribete{
+        padding-left: 80px;
+        margin-top: 10px;
+    }
+    .f-logo{
+        padding: 20px;
+    }
+
+}
